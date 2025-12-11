@@ -21,8 +21,9 @@ Windows Registry Editor Version 5.00
 "AutoDownload"=dword:00000002
 
 ; --- Disable the Windows Update service (wuauserv) ---
-; 4 = désactivé (service arrêté et non démarrable)
+; 4 = disabled (service stopped and cannot be restarted)
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
 "Start"=dword:00000004
+
 
