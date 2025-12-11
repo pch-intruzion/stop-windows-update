@@ -1,6 +1,6 @@
 Windows Registry Editor Version 5.00
 
-; --- Réactivation de Windows Update ---
+; --- Active Windows Update ---
 
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
@@ -17,4 +17,5 @@ Windows Registry Editor Version 5.00
 
 ; Réactive le service Windows Update
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
+
 "Start"=dword:00000003
