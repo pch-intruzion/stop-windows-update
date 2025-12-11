@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+; --- Désactivation complète de Windows Update ---
+
+; Désactive les mises à jour automatiques via stratégies
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
+"NoAutoUpdate"=dword:00000001
+"AUOptions"=dword:00000001
+
+; Empêche Windows de rechercher des mises à jour
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"DisableWindowsUpdateAccess"=dword:00000001
+"DoNotConnectToWindowsUpdateInternetLocations"=dword:00000001
+
+; Désactive la possibilité de forcer les mises à jour
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"SetDisableUXWUAccess"=dword:00000001
+
+; Bloque la mise à jour automatique du Store (facultatif, mais conseillé)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore]
+"AutoDownload"=dword:00000002
+
+; --- Désactivation du service Windows Update (wuauserv) ---
+; 2 = désactivé (service arrêté et non démarrable)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
+"Start"=dword:00000004
